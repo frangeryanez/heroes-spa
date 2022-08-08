@@ -1,7 +1,15 @@
-import { Nav, Navbar } from 'react-bootstrap';
-import { NavLink } from 'react-router-dom';
+import { Button, Nav, Navbar } from 'react-bootstrap';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 export const Collapsible = () => {
+  const navigate = useNavigate();
+
+  const onLogout = () => {
+    navigate('/login', {
+      replace: true
+    });
+  };
+
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className="p-2 ps-3 pl-3">
       <Navbar.Brand href="/">Heroes</Navbar.Brand>
@@ -23,12 +31,12 @@ export const Collapsible = () => {
         </Nav>
         <Nav>
           <Nav.Link>username</Nav.Link>
-          <NavLink 
-            to="/login"
-            className={ ({ isActive }) => `nav-item nav-link ${ isActive ? 'active' : '' }`}
+          <Button 
+            variant="outline-light"
+            onClick={ onLogout }
           >
             Logout
-          </NavLink>
+          </Button>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
