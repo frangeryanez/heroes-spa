@@ -7,7 +7,7 @@ export const Login = () => {
   const onLogin = () => {
     navigate('/', {
       replace: true
-    })
+    });
   };
 
   return (
