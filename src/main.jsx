@@ -4,6 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { HeroesApp } from './HeroesApp';
 import './styles.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'animate.css';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root')

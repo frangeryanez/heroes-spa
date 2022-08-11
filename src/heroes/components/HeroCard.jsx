@@ -25,7 +25,7 @@ export const HeroCard = ({
   };
 
   return (
-    <Col md={4} xs={12} className="p-2">
+    <Col md={4} xs={12} className="p-2 animate__animated animate__fadeIn">
       <Card>
         <Card.Img variant="top" src={ heroImageUrl } alt={ superhero } />
         <Card.Body>
