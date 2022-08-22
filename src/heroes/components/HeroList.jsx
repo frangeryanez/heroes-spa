@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { ListGroup, Row } from 'react-bootstrap';
+import { Col, ListGroup, Row } from 'react-bootstrap';
 import { getHeroesByPublisher } from '../helpers';
 import { HeroCard } from './';
 
@@ -13,6 +13,7 @@ export const HeroList = ({ publisher }) => {
         {heroes.map(hero => (
           <HeroCard 
             key={ hero.id } 
+            md="4"
             { ...hero } 
           />
         ))}

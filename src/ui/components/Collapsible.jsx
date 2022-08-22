@@ -28,6 +28,12 @@ export const Collapsible = () => {
           >
             DC
           </NavLink>
+          <NavLink 
+            to="/search"
+            className={ ({ isActive }) => `nav-item nav-link ${ isActive ? 'active' : '' }`}
+          >
+            Search
+          </NavLink>
         </Nav>
         <Nav>
           <Nav.Link>username</Nav.Link>

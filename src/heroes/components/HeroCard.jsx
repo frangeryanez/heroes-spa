@@ -1,5 +1,5 @@
 import { Button, Card, Col } from 'react-bootstrap';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const CharactersByHero = ({ alter_ego, characters }) => {
   return ( alter_ego === characters )
@@ -10,10 +10,10 @@ const CharactersByHero = ({ alter_ego, characters }) => {
 export const HeroCard = ({ 
   id,
   superhero,
-  publisher,
   alter_ego,
   first_appearance,
-  characters
+  characters,
+  md
 }) => {
   const heroImageUrl = `/assets/heroes/${ id }.jpg`;
   const navigate = useNavigate();
@@ -25,9 +25,13 @@ export const HeroCard = ({
   };
 
   return (
-    <Col md={4} xs={12} className="p-2 animate__animated animate__fadeIn">
+    <Col md={ md } xs={12} className="p-2 animate__animated animate__fadeIn">
       <Card>
-        <Card.Img variant="top" src={ heroImageUrl } alt={ superhero } />
+        <Card.Img 
+          variant="top" 
+          src={ heroImageUrl } 
+          alt={ superhero } 
+        />
         <Card.Body>
           <Card.Title>{ superhero }</Card.Title>
           <Card.Text>{ alter_ego }</Card.Text>
