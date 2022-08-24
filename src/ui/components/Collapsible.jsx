@@ -1,10 +1,15 @@
+import { useContext } from 'react';
 import { Button, Nav, Navbar } from 'react-bootstrap';
 import { NavLink, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../auth/context/AuthContext';
 
 export const Collapsible = () => {
   const navigate = useNavigate();
+  const { user, logout } = useContext(AuthContext);
 
   const onLogout = () => {
+    logout();
+    
     navigate('/login', {
       replace: true
     });
@@ -36,7 +41,7 @@ export const Collapsible = () => {
           </NavLink>
         </Nav>
         <Nav>
-          <Nav.Link>username</Nav.Link>
+          <Nav.Link>{ user?.name }</Nav.Link>
           <Button 
             variant="outline-light"
             onClick={ onLogout }
