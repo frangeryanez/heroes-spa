@@ -45,6 +45,7 @@ export const Collapsible = () => {
           <Button 
             variant="outline-light"
             onClick={ onLogout }
+            aria-label="btn-logout"
           >
             Logout
           </Button>
