@@ -1,9 +1,9 @@
 import { render, screen } from '@testing-library/react';
-import { MemoryRouter, Route, Routes } from 'react-router-dom';
+import { MemoryRouter } from 'react-router-dom';
 import { AuthContext } from '../../src/auth';
-import { AppRouter, PublicRoute } from '../../src/router';
+import { AppRouter } from '../../src/router';
 
-describe('Test on file <AppRouter />', () => {
+describe('Test on <AppRouter />', () => {
   test('Must show the login if it is not authenticated', () => {
     const contextValue = {
       logged: false
